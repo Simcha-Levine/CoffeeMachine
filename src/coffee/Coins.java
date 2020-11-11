@@ -15,11 +15,11 @@ public class Coins {
 	private Point point;
 	
 	public final double radius = 50;
-	private final int tipe;
+	private final int type;
 	public final double value;
 	
 	public Coins(int tipe, Point p) {
-		this.tipe = tipe;
+		this.type = tipe;
 		switch (tipe) {
 		case 0:
 			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/1shekel.png");
@@ -57,7 +57,7 @@ public class Coins {
 	}
 	
 	public void paint(Graphics g, Component c) {
-		if(tipe != 6) {
+		if(type != 6) {
 			coine.paintIcon(c, g, point.x - 50, point.y - 50);
 		} else {
 			coine.paintIcon(c, g, point.x, point.y);
@@ -65,7 +65,7 @@ public class Coins {
 	}
 	
 	public void move(Point p, Point dif) {
-		if(tipe == 6) {
+		if(type == 6) {
 			point = new Point(p.x - dif.x, p.y - dif.y);
 		} else {
 			point = p;
@@ -76,7 +76,7 @@ public class Coins {
 		return point;
 	}
 	public boolean isInCoin(Point p) {
-		if(tipe == 6) {
+		if(type == 6) {
 			return Wallet.inBound(p, point, new Point(300, 165));
 		}
 		return getDictans(p, point) <= radius;
