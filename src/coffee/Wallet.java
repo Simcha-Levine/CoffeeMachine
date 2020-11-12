@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 public class Wallet {
 	
-	private ImageIcon wallet = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/wallet2.png");
+	private ImageIcon wallet;
 	private Point point;
 	private final List<Point> coinPoints;
 	private final Point coinBounds;
@@ -20,7 +20,10 @@ public class Wallet {
 
 	public Wallet(Point p) {
 		point = p;
-		
+
+		ClassLoader classLoader = getClass().getClassLoader();
+		wallet = new ImageIcon(classLoader.getResource("images/wallet2.png"));
+
 		coinPoints = new ArrayList<>();
 		coinBounds = new Point(100,50);
 		

@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -17,32 +18,34 @@ public class Drink {
 	private Point buttonPoint = null;
 
 	private ImageIcon drinkImage;
-	
-	public Drink(String n, double p, int type) {
+
+	ClassLoader classLoader = getClass().getClassLoader();
+
+	public Drink(String n, double p, int type) throws IOException {
 		name = n;
 		price = p;
 		
 		switch (type) {
 		case 0:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/nes1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/nes1.png"));
 			break;
 		case 1:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/blak1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/black1.png"));
 			break;
 		case 2:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/tea1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/tea1.png"));
 			break;
 		case 3:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/shoko1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/shoko1.png"));
 			break;
 		case 4:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/soop.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/soop.png"));
 			break;
 		case 5:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/kola1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/kola1.png"));
 			break;
 		case 6:
-			drinkImage = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/oreng1.png");
+			drinkImage = new ImageIcon(classLoader.getResource("images/oreng1.png"));
 			break;
 		default:
 			drinkImage = null;

@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class ButtonGrid {
 	public final String[] names = {" נס קפה"," קפה שחור"," תה"," שוקו"," מרק"," קולה"," מיץ תפוזים"};
 	public final double[] prices = {2.4, 2.1, 1.6, 2.5, 3.1, 3.3, 3.2};
 	
-	public ButtonGrid(Point p, Point s, Point g) {
+	public ButtonGrid(Point p, Point s, Point g) throws IOException {
 		point = p;
 		size = s;
 		grid = g;
@@ -102,7 +103,7 @@ public class ButtonGrid {
 	}
 			
 	
-	public Drink isPressed(Point e) {
+	public Drink isPressed(Point e) throws IOException {
 		int i = 0;
 		for(Drink b : buttons) {
 			if(b.checkPresed(e)) {

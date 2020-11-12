@@ -17,36 +17,38 @@ public class Coins {
 	public final double radius = 50;
 	private final int type;
 	public final double value;
-	
+
+	private ClassLoader classLoader = getClass().getClassLoader();
+
 	public Coins(int tipe, Point p) {
 		this.type = tipe;
 		switch (tipe) {
 		case 0:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/1shekel.png");
+			coine = new ImageIcon(classLoader.getResource("images/1shekel.png"));
 			value = 1;
 			break;
 		case 1:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/2shekel.png");
+			coine = new ImageIcon(classLoader.getResource("images/2shekel.png"));
 			value = 2;
 			break;
 		case 2:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/10shekel.png");
+			coine = new ImageIcon(classLoader.getResource("images/10shekel.png"));
 			value = 10;
 			break;
 		case 3:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/half.png");
+			coine = new ImageIcon(classLoader.getResource("images/half.png"));
 			value = 0.5;
 			break;
 		case 4:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/10agorot.png");
+			coine = new ImageIcon(classLoader.getResource("images/10agorot.png"));
 			value = 0.1;
 			break;
 		case 5:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/5shekel.png");
+			coine = new ImageIcon(classLoader.getResource("images/5shekel.png"));
 			value = 5;
 			break;
 		default:
-			coine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/20shekel.png");
+			coine = new ImageIcon(classLoader.getResource("images/20shekel.png"));
 			value = 20;
 			break;
 		}

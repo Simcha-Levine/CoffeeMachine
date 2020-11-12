@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Layout extends JPanel{
 	
 	private double paid = 0.0;
 	
-	public Layout() {
+	public Layout() throws IOException {
 		coins = new ArrayList<>();
 		
 		setPreferredSize(new Dimension(1000,680));
@@ -138,10 +139,14 @@ public class Layout extends JPanel{
 				coinAtached.move(p, difference);
 				walletAtached = -1;
 			}
-		
-			if(buttons.isPressed(e.getPoint()) != null) {
-				drink = buttons.isPressed(e.getPoint());
-				coffeeMechine.text = "you chose " + drink.name + " it cost's " + drink.price;	
+
+			try {
+				if(buttons.isPressed(e.getPoint()) != null) {
+					drink = buttons.isPressed(e.getPoint());
+					coffeeMechine.text = "you chose " + drink.name + " it cost's " + drink.price;
+				}
+			} catch (IOException ioException) {
+				ioException.printStackTrace();
 			}
 			repaint();
 		}
