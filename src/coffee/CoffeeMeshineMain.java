@@ -17,13 +17,7 @@ public class CoffeeMeshineMain {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		Layout panel = new Layout();
-		
-//		Dimension windowSize = frame.getSize();
-//        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-//        Point centerPoint = ge.getCenterPoint();
-//
-//        int dx = centerPoint.x - windowSize.width / 2 - 100;
-//        int dy = centerPoint.y - windowSize.height / 2 - 100;    
+
         frame.setLocation(100, 100);
 
 		frame.getContentPane().add(panel);
