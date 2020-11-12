@@ -23,9 +23,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class CoffeeMethine extends JPanel{
+
+	private ClassLoader classLoader = getClass().getClassLoader();
 	
-	ImageIcon meshine = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/meshine.png");
-	ImageIcon screen = new ImageIcon("/home/levine-fam/Desktop/coffeeMashine/screen1.png");
+	ImageIcon meshine = new ImageIcon(classLoader.getResource("images/meshine.png"));
+	ImageIcon screen = new ImageIcon(classLoader.getResource("images/screen1.png"));
 	
 	public String text = "please wait for instructions";
 	public double payStr = 0.0;
